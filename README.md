@@ -34,7 +34,7 @@ Run the bot
 ```
 
 ## Tutorial
-[![Spambot tutorial](https://img.youtube.com/vi/hODYmdgEJs0/0.jpg)](https://www.youtube.com/watch?v=hODYmdgEJs0)
+https://youtu.be/hODYmdgEJs0
 
 
 ## Author
