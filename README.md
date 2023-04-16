@@ -33,6 +33,9 @@ Run the bot
   node app.js
 ```
 
+## Tutorial
+[![Spambot tutorial](https://img.youtube.com/vi/hODYmdgEJs0/0.jpg)](https://www.youtube.com/watch?v=hODYmdgEJs0)
+
 
 ## Author
 
