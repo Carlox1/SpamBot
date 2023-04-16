@@ -41,5 +41,5 @@ https://youtu.be/hODYmdgEJs0
 
  [CarloxCoC](https://www.github.com/CarloxCoC)
 
-![Colonizadores](https://discordapp.com/api/guilds/688149718995304470/widget.png?style=banner2)
+[![Colonizadores](https://discordapp.com/api/guilds/688149718995304470/widget.png?style=banner2)](https://discord.gg/2W4r9cxpBM)
 
