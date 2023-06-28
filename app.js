@@ -1,6 +1,10 @@
 const fs = require("fs");
 const mineflayer = require("mineflayer");
+let lobbyF = false
 let bot;
+
+console.clear()
+console.log("6b6t chat spammer by Carlox\nhttps://github.com/CarloxCoC/SpamBot\nv1.1\n")
 
 const config = JSON.parse(fs.readFileSync("./config.json", "utf-8"));
 
@@ -10,16 +14,38 @@ function getRandomMessage() {
 
 function isInLobby() {
   if (!bot || !bot.game || bot.game.difficulty != "hard") {
+    if (!lobbyF) leaveLobby()
     return true;
   } else {
     return false;
   }
 }
 
+//leave the lobby
+async function leaveLobby() {
+  lobbyF = true
+
+  bot.controlState.forward = true
+  await bot.waitForTicks(40)
+  bot.controlState.forward = false
+
+  while (bot?.game?.difficulty != "hard") {
+    bot.controlState.back = true
+    await bot.waitForTicks(20)
+    bot.controlState.back = false
+
+    bot.controlState.forward = true
+    await bot.waitForTicks(30)
+    bot.controlState.forward = false
+  }
+
+  lobbyF = false
+}
+
 const main = () => {
   let forceStop = false;
   bot = mineflayer.createBot({
-    host: "anarchy.6b6t.org",
+    host: "6b6t.org",
     username: config.username,
     version: "1.18.1",
     skipValidation: true,
@@ -63,7 +89,8 @@ const main = () => {
     bot.end();
   });
 
-  bot.on("messagestr", (message) => {
+  bot.on("messagestr", (message, pos) => {
+    if (pos != "chat" || !message.startsWith("You whisper to ")) return
     console.log(message);
   });
 
@@ -74,6 +101,7 @@ const main = () => {
 
   bot.on("end", () => {
     bot.removeAllListeners();
+    bot = null;
     forceStop = true;
     setTimeout(main, 5000);
   });

@@ -1,6 +1,6 @@
 {
   "name": "mineflayer-spambot",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Spam bot for 6b6t.org using Mineflayer",
   "main": "app.js",
   "scripts": {
